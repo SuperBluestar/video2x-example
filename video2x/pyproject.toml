@@ -1,0 +1,59 @@
+[project]
+name = "video2x"
+description = "A video/image upscaling and frame interpolation framework"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "AGPL-3.0-or-later" }
+keywords = [
+  "super-resolution",
+  "upscaling",
+  "neural-network",
+  "machine-learning",
+]
+authors = [{ name = "K4YT3X", email = "i@k4yt3x.com" }]
+classifiers = [
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Multimedia :: Video",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "ffmpeg-python>=0.2.0",
+  "loguru>=0.6.0",
+  "opencv-python==4.5.5.64",
+  "pillow>=9.1.0",
+  "pynput>=1.7.6",
+  "rich>=12.0.0",
+  "waifu2x-ncnn-vulkan-python>=1.0.2rc3",
+  "srmd-ncnn-vulkan-python>=1.0.2",
+  "realsr-ncnn-vulkan-python>=1.0.4",
+  "rife-ncnn-vulkan-python>=1.1.2.post3",
+  "realcugan-ncnn-vulkan-python>=1.0.2",
+]
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://github.com/k4yt3x/video2x/"
+documentation = "https://github.com/k4yt3x/video2x/wiki"
+repository = "https://github.com/k4yt3x/video2x.git"
+changelog = "https://github.com/k4yt3x/video2x/releases"
+
+[project.scripts]
+video2x = "video2x:main"
+
+[tool.isort]
+profile = "black"
+
+[tool.pdm]
+version = { from = "video2x/__init__.py" }
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
